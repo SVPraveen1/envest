@@ -118,10 +118,10 @@ export default function NewsPage() {
       {/* Header */}
       <header className="border-b bg-white sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center space-x-2">
+            <Link href="/" className="flex items-center space-x-2 cursor-pointer">
             <TrendingUp className="h-6 w-6 sm:h-8 sm:w-8 text-blue-600" />
             <h1 className="text-xl sm:text-2xl font-bold text-gray-900">SmartInvest</h1>
-          </div>
+            </Link>
           <div className="flex items-center space-x-2 sm:space-x-4">
             <div className="hidden sm:flex items-center space-x-4">
               <Link href="/dashboard" className="text-gray-600 hover:text-blue-600 transition-colors text-sm">
