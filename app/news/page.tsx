@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { TrendingUp, Newspaper, Clock, ExternalLink, Search, Filter, LogOut } from "lucide-react"
 import Link from "next/link"
+import Footer from "@/components/footer"
 
 interface NewsItem {
   title: string
@@ -130,10 +131,7 @@ export default function NewsPage() {
                 Portfolio
               </Link>
             </div>
-            <div className="flex items-center space-x-2">
-              <LogOut className="h-4 w-4 text-gray-600" />
-              <span className="text-sm text-gray-700 hidden sm:inline">{appUser.name}</span>
-            </div>
+            
             <Button variant="outline" size="sm" onClick={handleLogout}>
               <LogOut className="h-3 w-3 sm:h-4 sm:w-4 sm:mr-2" />
               <span className="hidden sm:inline">Logout</span>
@@ -298,6 +296,7 @@ export default function NewsPage() {
           </CardContent>
         </Card>
       </div>
+      <Footer />
     </div>
   )
 }

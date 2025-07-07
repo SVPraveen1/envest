@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Switch } from "@/components/ui/switch"
 import { Label } from "@/components/ui/label"
+import Footer from "@/components/footer"
 import {
   TrendingUp,
   Newspaper,
@@ -22,6 +23,7 @@ import {
 } from "lucide-react"
 import Link from "next/link"
 import { DebugPanel } from "@/components/debug-panel"
+
 
 interface NewsItem {
   title: string
@@ -226,10 +228,10 @@ export default function DashboardPage() {
       {/* Header */}
       <header className="border-b bg-white sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center space-x-2">
+            <Link href="/" className="flex items-center space-x-2 cursor-pointer">
             <TrendingUp className="h-6 w-6 sm:h-8 sm:w-8 text-blue-600" />
             <h1 className="text-xl sm:text-2xl font-bold text-gray-900">SmartInvest</h1>
-          </div>
+            </Link>
           <div className="flex items-center space-x-2 sm:space-x-4">
             <div className="hidden sm:flex items-center space-x-4">
               <Link href="/portfolio" className="text-gray-600 hover:text-blue-600 transition-colors text-sm">
@@ -239,10 +241,7 @@ export default function DashboardPage() {
                 News
               </Link>
             </div>
-            <div className="flex items-center space-x-2">
-              <Bell className="h-4 w-4 text-gray-600" />
-              <span className="text-sm text-gray-700 hidden sm:inline">{user.name}</span>
-            </div>
+           
             <Button variant="outline" size="sm" onClick={handleLogout}>
               <LogOut className="h-3 w-3 sm:h-4 sm:w-4 sm:mr-2" />
               <span className="hidden sm:inline">Logout</span>
@@ -552,6 +551,7 @@ export default function DashboardPage() {
           </TabsContent>
         </Tabs>
       </div>
+      <Footer />
     </div>
   )
 }
